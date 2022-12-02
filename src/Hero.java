@@ -8,6 +8,8 @@ public class Hero {
     String rasa;
 
     String profession;
+    int energy=10;
+
 
 
     public int getXp(){
@@ -22,18 +24,21 @@ public class Hero {
         }
 
     }
-    public Hero(int lvl, int xp, int damage, int defense, String name, String rasa) {
+    public Hero(int lvl, int xp, int damage, int defense, String name, String rasa, int
+                 energy) {
         this.lvl = lvl;
         this.xp = xp;
         this.damage = damage;
         this.defense = defense;
         this.name = name;
         this.rasa = rasa;
+        this.energy = energy;
+
     }
 
     public void info() {
         System.out.println(("Имя: " + name) + ", " + ("Здоровье: " + xp) + ", "
-                + ("Уровень: " + lvl) + ", " + ("Урон: " + damage) + ", " + ("Защита: " + defense));
+                + ("Уровень: " + lvl) + ", " + ("Урон: " + damage) + ", " + ("Защита: " + defense)+", "+("Энергия: " + energy));
     }
 }
 
