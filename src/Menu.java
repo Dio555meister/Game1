@@ -3,10 +3,12 @@ import mobs.Dragons;
 import java.util.Scanner;
 
 public class Menu {
+    int balanc;
     Hero hero;
     Scanner scanner = new Scanner(System.in);
 
     public void glavMenu() {
+        System.out.println("Balanc" + balanc);
         System.out.println("1 Создать персонажа");
         System.out.println("2 Начать сражения");
         System.out.println("3 Прокачка персонажа");
