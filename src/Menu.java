@@ -3,7 +3,7 @@ import mobs.Dragons;
 import java.util.Scanner;
 
 public class Menu {
-    int balanc;
+    int balanc = 10000;
     Hero hero;
     Scanner scanner = new Scanner(System.in);
 
