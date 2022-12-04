@@ -12,7 +12,7 @@ public class Menu {
         System.out.println("Balance " + balance);
         System.out.println("1 Создать персонажа");
         System.out.println("2 Начать сражения");
-        System.out.println("3 Прокачка персонажа");
+        System.out.println("3 Покупка золота");
         String answer = scanner.nextLine();
 
         switch (answer) {
@@ -22,7 +22,8 @@ public class Menu {
             case "2" -> {
                 arena();
             }
-            case "3" -> {
+            case "3" -> { levelUp();
+                glavMenu();
             }
             default -> {
                 System.out.println("Выберите один из пунктов меню");
@@ -40,29 +41,31 @@ public class Menu {
         System.out.println("----------------------------");
         String answer = scanner.nextLine();
         if (answer.equals("1")) {
-            balance=balance-500;
+            balance = balance - 500;
             while (true) {
                 dragons.hp -= hero.damage / 2; // 500-200
-                System.out.println(hero.name + " атаковал дракона (нанес " + hero.damage / 2 + ")" + "хр дракона "
+                System.out.println(hero.name + " атаковал дракона (нанес урон " + hero.damage / 2 + ")" + " хр дракона "
                         + dragons.hp);
                 hero.setXp(dragons.attack / 2);
-                System.out.println("\u001B[31m" + " Dragons атаковал Героя (нанес " + dragons.attack / 2 + ")" +
+                System.out.println("\u001B[31m" + " Dragons атаковал Героя (нанес урон " + dragons.attack / 2 + ")" +
                         "xp героя " + hero.getXp() + "\u001B[0m");
 
                 if (dragons.hp < 0) {
-                    System.out.println(hero.name + " победил");
-                    energy=energy-1;
-                    System.out.println("Энергия: "+energy);
+                    System.out.println(hero.name + " победил. Вы заработали " + 200 + " золота");
+                    energy = energy - 1;
+                    System.out.println("Энергия: " + energy);
+                    balance = balance + 200;
+                    System.out.println();
                     break;
                 } else if (hero.getXp() < 0) {
                     System.out.println("победил дракон ");
-                    energy=energy-2;
-                    System.out.println("Энергия: "+energy);
+                    energy = energy - 2;
+                    System.out.println("Энергия: " + energy);
                     break;
                 }
             }
         } else if (answer.equals("2")) {
-            balance=balance-1000;
+            balance = balance - 1000;
             while (true) {
                 darkKnight.hp -= hero.damage / 3;
                 System.out.println(hero.name + " атаковал темного рыцаря (нанес " + hero.damage / 3 + ")" +
@@ -71,21 +74,25 @@ public class Menu {
                 System.out.println("\u001B[31m" + " Тёмный рыцарь атаковал Героя (нанес " + darkKnight.attack / 3 + ")" +
                         "xp героя " + hero.getXp() + "\u001B[0m");
 
+
                 if (darkKnight.hp < 0) {
-                    balance=balance+200;
-                    energy=energy-1;
-                    System.out.println(hero.name + " победил");
+                    balance = balance + 200;
+                    System.out.println(hero.name + " победил. Вы заработали " + 200 + " золота");
+                    energy = energy - 1;
+                    System.out.println("Энергия " + energy);
                     break;
                 } else if (hero.getXp() < 0) {
-                    balance=balance-100;
-                    energy=energy-1;
+                    balance = balance - 100;
                     System.out.println("победил Темный рыцарь ");
+                    energy = energy - 2;
+                    System.out.println("Энергия " + energy);
 
                     break;
                 }
             }
 
-        } System.out.println("----------------------------");
+        }
+        System.out.println("----------------------------");
         glavMenu();
     }
 
@@ -113,23 +120,23 @@ public class Menu {
     }
 
     public void toCreateHuman() {
-        balance= balance-1000;
-        System.out.println( "Энергия персонажа: " + energy);
+        balance = balance - 1000;
+        System.out.println("Энергия персонажа: " + energy);
         System.out.println("Введите имя героя ");
         String name = scanner.nextLine();
 
         while (true) {
             String raasa = choiceRace();
             if (raasa.equals("маг")) {
-                hero = new Human(1, 100, 900, 50, name, raasa,energy);
+                hero = new Human(1, 100, 900, 50, name, raasa, energy);
                 hero.info();
                 break;
             } else if (raasa.equals("охотник")) {
-                hero = new Human(1, 1150, 400, 300, name, raasa,energy);
+                hero = new Human(1, 1150, 400, 300, name, raasa, energy);
                 hero.info();
                 break;
             } else if (raasa.equals("воин")) {
-                hero = new Human(1, 300, 100, 600, name, raasa,energy);
+                hero = new Human(1, 300, 100, 600, name, raasa, energy);
                 hero.info();
                 break;
             } else {
@@ -141,7 +148,7 @@ public class Menu {
     }
 
     public void toCreateElf() {
-        balance= balance-1000;
+        balance = balance - 1000;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите имя героя ");
         String name = scanner.nextLine();
@@ -149,15 +156,15 @@ public class Menu {
         while (true) {
             String raasa = choiceRace();
             if (raasa.equals("маг")) {
-                hero = new Elf(1, 100, 1000, 90, name, raasa,energy);
+                hero = new Elf(1, 100, 1000, 90, name, raasa, energy);
                 hero.info();
                 break;
             } else if (raasa.equals("охотник")) {
-                hero = new Elf(1, 200, 700, 350, name, raasa,energy);
+                hero = new Elf(1, 200, 70, 350, name, raasa, energy);
                 hero.info();
                 break;
             } else if (raasa.equals("воин")) {
-                hero = new Elf(1, 300, 100, 700, name, raasa,energy);
+                hero = new Elf(1, 300, 100, 700, name, raasa, energy);
                 hero.info();
                 break;
             } else {
@@ -169,7 +176,7 @@ public class Menu {
     }
 
     public void toCreateOrk() {
-        balance= balance-1000;
+        balance = balance - 1000;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите имя героя ");
         String name = scanner.nextLine();
@@ -177,7 +184,7 @@ public class Menu {
         while (true) {
             String raasa = choiceRace();
             if (raasa.equals("маг")) {
-                hero = new Ork(1, 200, 600, 200, name, raasa,energy);
+                hero = new Ork(1, 200, 600, 200, name, raasa, energy);
                 hero.info();
                 break;
             } else if (raasa.equals("охотник")) {
@@ -185,7 +192,7 @@ public class Menu {
                 hero.info();
                 break;
             } else if (raasa.equals("воин")) {
-                hero = new Ork(1, 400, 200, 1100, name, raasa,energy);
+                hero = new Ork(1, 400, 200, 1100, name, raasa, energy);
                 hero.info();
                 break;
             } else {
@@ -211,5 +218,38 @@ public class Menu {
             return "";
         }
     }
+
+    public void energylow() {
+        if (energy == 0) {
+            System.out.println(" Пополните энергию");
+        }
+    }
+
+    public void levelUp() {
+        System.out.println("1 Купить 3000 золота");
+        System.out.println("2 Купить 5000 золота");
+        System.out.println("3 Купить 10000 золота ");
+        String goldBay = scanner.nextLine();
+        if (goldBay.equals("1")){
+            balance= balance+3000;
+            System.out.println("Вы пополнили баланс на 3000! Ваш текуший баланс " + balance);
+        } else if (goldBay.equals("2")) {
+            balance=balance+5000;
+            System.out.println("Вы пополнили баланс на 5000! Ваш текуший баланс " + balance);
+
+        } else if (goldBay.equals("3")) {
+            balance=balance+10000;
+            System.out.println("Вы пополнили баланс на 10000! Ваш текуший баланс " + balance);
+
+        }else {
+            System.out.println("Выберите один из пунктов меню");
+        }
+
+    }
 }
+
+
+
+
+
 

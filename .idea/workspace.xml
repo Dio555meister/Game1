@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4554200f-54ff-42ed-9ea6-9f209ac83766" name="Changes" comment="new balanc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Human.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobs/Qestion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobs/Question.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
