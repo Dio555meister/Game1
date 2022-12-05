@@ -36,6 +36,8 @@ public class Menu {
     }
 
     public void arena() {
+        //тут сначало нужно проверить переменная hero (которая прописанная в классе) null или нет
+        //если нет то продолжаем если да то выводим сообщение создайте персонажа и перекидуем на пункт 1
         Dragons dragons = new Dragons();
         DarkKnight darkKnight = new DarkKnight();
         System.out.println("Выберите противника");
