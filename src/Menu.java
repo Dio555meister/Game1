@@ -22,7 +22,8 @@ public class Menu {
             case "2" -> {
                 arena();
             }
-            case "3" -> { levelUp();
+            case "3" -> {
+                levelUp();
                 glavMenu();
             }
             default -> {
@@ -120,24 +121,24 @@ public class Menu {
     }
 
     public void toCreateHuman() {
-        balance = balance - 1000;
-        System.out.println("Энергия персонажа: " + energy);
-        System.out.println("Введите имя героя ");
-        String name = scanner.nextLine();
-
+        String name = inputNameHero();
+        String raasa = choiceRace();
         while (true) {
-            String raasa = choiceRace();
             if (raasa.equals("маг")) {
                 hero = new Human(1, 100, 900, 50, name, raasa, energy);
                 hero.info();
+                System.out.println("Энергия персонажа: " + hero.energy);
+                balance = balance - 1000;
                 break;
             } else if (raasa.equals("охотник")) {
                 hero = new Human(1, 1150, 400, 300, name, raasa, energy);
                 hero.info();
+                balance = balance - 1000;
                 break;
             } else if (raasa.equals("воин")) {
                 hero = new Human(1, 300, 100, 600, name, raasa, energy);
                 hero.info();
+                balance = balance - 1000;
                 break;
             } else {
                 System.out.println("введите расу еще раз");
@@ -148,24 +149,24 @@ public class Menu {
     }
 
     public void toCreateElf() {
-        balance = balance - 1000;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите имя героя ");
-        String name = scanner.nextLine();
+        String name = inputNameHero();
 
         while (true) {
             String raasa = choiceRace();
             if (raasa.equals("маг")) {
                 hero = new Elf(1, 100, 1000, 90, name, raasa, energy);
                 hero.info();
+                balance = balance - 1000;
                 break;
             } else if (raasa.equals("охотник")) {
                 hero = new Elf(1, 200, 70, 350, name, raasa, energy);
                 hero.info();
+                balance = balance - 1000;
                 break;
             } else if (raasa.equals("воин")) {
                 hero = new Elf(1, 300, 100, 700, name, raasa, energy);
                 hero.info();
+                balance = balance - 1000;
                 break;
             } else {
                 System.out.println("введите расу еще раз");
@@ -175,12 +176,16 @@ public class Menu {
         }
     }
 
-    public void toCreateOrk() {
-        balance = balance - 1000;
+
+    public String inputNameHero() {
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите имя героя ");
-        String name = scanner.nextLine();
+        return scanner.nextLine();
+    }
 
+    public void toCreateOrk() {
+        String name = inputNameHero();
         while (true) {
             String raasa = choiceRace();
             if (raasa.equals("маг")) {
@@ -230,18 +235,18 @@ public class Menu {
         System.out.println("2 Купить 5000 золота");
         System.out.println("3 Купить 10000 золота ");
         String goldBay = scanner.nextLine();
-        if (goldBay.equals("1")){
-            balance= balance+3000;
+        if (goldBay.equals("1")) {
+            balance = balance + 3000;
             System.out.println("Вы пополнили баланс на 3000! Ваш текуший баланс " + balance);
         } else if (goldBay.equals("2")) {
-            balance=balance+5000;
+            balance = balance + 5000;
             System.out.println("Вы пополнили баланс на 5000! Ваш текуший баланс " + balance);
 
         } else if (goldBay.equals("3")) {
-            balance=balance+10000;
+            balance = balance + 10000;
             System.out.println("Вы пополнили баланс на 10000! Ваш текуший баланс " + balance);
 
-        }else {
+        } else {
             System.out.println("Выберите один из пунктов меню");
         }
 
