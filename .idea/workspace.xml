@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4554200f-54ff-42ed-9ea6-9f209ac83766" name="Changes" comment="new balanc">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question.txt" afterDir="false" />
-    </list>
+    <list default="true" id="4554200f-54ff-42ed-9ea6-9f209ac83766" name="Changes" comment="use only human -&gt; hunter or mage. mobs only dragon" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670221598001</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="use only human -&gt; hunter or mage. mobs only dragon">
+      <created>1670268380940</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670268380940</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,7 +135,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new balanc" />
-    <option name="LAST_COMMIT_MESSAGE" value="new balanc" />
+    <MESSAGE value="use only human -&gt; hunter or mage. mobs only dragon" />
+    <option name="LAST_COMMIT_MESSAGE" value="use only human -&gt; hunter or mage. mobs only dragon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
